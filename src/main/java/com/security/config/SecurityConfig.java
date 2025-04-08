@@ -34,6 +34,7 @@ public class SecurityConfig {
 		.requestMatchers("/register","/login").permitAll()
 		.anyRequest().authenticated()
 					)
+		//.formLogin(Customizer.withDefaults())// For web browser
 		.httpBasic(Customizer.withDefaults())
 		.addFilterBefore(jwtFilter,UsernamePasswordAuthenticationFilter.class);
     	
